@@ -43,9 +43,13 @@ cmake --build . --config Release
 cd meka/meka/srcs
 make
 # ---- optional: add z80-mode to your emacs config (if you use emacs) ----
-curl -o $HOME/.emacs.d/z80-mode.el https://raw.githubusercontent.com/SuperDisk/z80-mode/master/z80-mode.el
+if [[ ! -f $HOME/.emacs.d/z80-mode.el ]]; then
 
-if [[ -f $HOME/.emacs.d/init.el ]]; then
-  echo "(if (file-exists-p \"${HOME}/.emacs.d/z80-mode.el\") (load-file \"${HOME}/.emacs.d/z80-mode.el\"))" >> $HOME/.emacs.d/init.el
+  curl -o $HOME/.emacs.d/z80-mode.el https://raw.githubusercontent.com/SuperDisk/z80-mode/master/z80-mode.el
+
+  if [[ -f $HOME/.emacs.d/init.el ]]; then
+    echo "(if (file-exists-p \"${HOME}/.emacs.d/z80-mode.el\") (load-file \"${HOME}/.emacs.d/z80-mode.el\"))" >> $HOME/.emacs.d/init.el
+  fi
+
 fi
 #+END_SRC
