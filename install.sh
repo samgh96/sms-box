@@ -1,26 +1,43 @@
 #!/bin/bash
 
+ROOTDIR=$(pwd)
+
 # ---- build wla-dx ----
 cd wla-dx
 
 echo "------------------------------------"
-echo "Building wla-dx..."
 
-mkdir build && cd build
-cmake ..
-cmake --build . --config Release
-# optional: install wla-dx in /usr/local/bin
-if [[ ! -f /usr/local/bin/wla-z80 ]]; then
-    echo "Installing wla-dx in /usr/local/bin..."
-    sudo cmake -P cmake_install.cmake
+if [[ ! -f build ]]; then
+    echo "Building wla-dx..."
+    mkdir build && cd build
+    cmake ..
+    cmake --build . --config Release
+
+    # optional: install wla-dx in /usr/local/bin
+    # if [[ ! -f /usr/local/bin/wla-z80 ]]; then
+    # 	echo "Installing wla-dx in /usr/local/bin..."
+    # 	sudo cmake -P $ROOTDIR/wla-dx/build/cmake_install.cmake
+    # fi
 fi
+
+
 # ---- build meka ----
 echo "------------------------------------"
 echo "Building meka..."
-cd ../../meka/meka/srcs
+cd $ROOTDIR/meka/meka/srcs
+echo $PWD
 make
-# ---- optional: add z80-mode to your emacs config (if you use emacs) ----
+
+cd $ROOTDIR
+
+# if [[ ! -f /usr/local/bin/meka  ]]; then
+#     echo "Linking meka bin to /usr/local/bin..."
+#     echo $(realpath meka/meka/meka)
+#     sudo ln -s $(realpath meka/meka/meka) /usr/local/bin/meka
+# fi
+
 echo "------------------------------------"
+# ---- optional: add z80-mode to your emacs config (if you use emacs) ----
 echo "Setting up z80-mode in emacs..."
 if [[ ! -f $HOME/.emacs.d/z80-mode.el ]]; then
 
@@ -33,4 +50,10 @@ if [[ ! -f $HOME/.emacs.d/z80-mode.el ]]; then
 fi
 
 echo "------------------------------------"
-echo "Done!"
+cd ~/
+echo "Moving installation to /opt/sms-box..."
+sudo mv $ROOTDIR /opt/sms-box
+echo "------------------------------------"
+echo "Done! Now you should update your PATH variable:"
+echo "export PATH=$ROOTDIR/wla-dx/build/binaries:$ROOTDIR/meka/meka:$PATH"
+
