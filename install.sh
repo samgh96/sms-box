@@ -55,5 +55,5 @@ echo "Moving installation to /opt/sms-box..."
 sudo mv $ROOTDIR /opt/sms-box
 echo "------------------------------------"
 echo "Done! Now you should update your PATH variable:"
-echo "export PATH=$ROOTDIR/wla-dx/build/binaries:$ROOTDIR/meka/meka:$PATH"
-
+echo "export PATH=/opt/sms-box/wla-dx/build/binaries:/opt/sms-box/meka/meka:\$PATH"
+echo "Also set this alias to use meka: alias mekarun=/opt/sms-box/meka/meka/meka"
