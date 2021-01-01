@@ -11,7 +11,7 @@ cmake --build . --config Release
 # cd ../../blastem
 # make
 # ---- build meka ----
-cd meka/meka/srcs
+cd ../../meka/meka/srcs
 make
 # ---- optional: add z80-mode to your emacs config (if you use emacs) ----
 if [[ ! -f $HOME/.emacs.d/z80-mode.el ]]; then
