@@ -10,6 +10,14 @@ homebrew development. The following tools are included:
  - A hello world example with a simple Makefile.
  - A handful of documentation regarding SMS and z80.
 
+** Prerequisites
+*** meka
+ - Allegro5
+ - g++
+*** wla-dx
+ - cmake
+
+
 ** Installation
 First, clone the whole repo with its submodules using ~git clone
 --recurse-submodules -j8 https://github.com/samgh96/sms-box~.
@@ -29,9 +37,6 @@ alias mekarun=/opt/sms-box/meka/meka/meka
  - Make a z80 init file for SMS.
  - Read all .txt files in docs and convert them to markdown or org-mode.
  - Use only z80 + linker in ~wla-dx~ installation.
-** Prerequisites
-*** meka
- - Allegro5
- - g++
-*** wla-dx
- - cmake
+** Useful links
+Currently almost everything in this repository is extracted or slightly
+modified from https://www.smspower.org/Development/
