@@ -51,8 +51,9 @@ fi
 echo "------------------------------------"
 cd ~/
 echo "Copying installation to /opt/sms-box..."
-sudo cp "$ROOTDIR" /opt/sms-box
+sudo cp -r "$ROOTDIR" /opt/sms-box
 echo "------------------------------------"
 echo "Done! Now you should update your PATH variable:"
 echo "export PATH=/opt/sms-box/wla-dx/build/binaries:/opt/sms-box/meka/meka:\$PATH"
-echo "Also set this alias to use meka: alias mekarun=/opt/sms-box/meka/meka/meka"
+echo "Also set this alias to use meka:"
+echo "alias mekarun=/opt/sms-box/meka/meka/meka"

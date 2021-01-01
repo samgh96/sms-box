@@ -16,13 +16,19 @@ First, clone the whole repo with its submodules using ~git clone
 
 Then, install all prerequisites. After that, just run ~install.sh~.
 
-Currently ~wla-dx~ requires to be installed in the system, but there
-will be a way to leave all this in ~/opt/sms-box~ (probably).
+After the installation your Sega Master System environment will be
+located in ~/opt/sms-box~. Add the following lines to your ~.rc~ file
+in order to make ~sms-box~ easy to use:
+#+BEGIN_SRC bash
+export PATH=/opt/sms-box/wla-dx/build/binaries:/opt/sms-box/meka/meka:$PATH
+alias mekarun=/opt/sms-box/meka/meka/meka
+#+END_SRC
 
 ** TODO Things to be done
  - Put everything in a container (if possible).
  - Make a z80 init file for SMS.
  - Read all .txt files in docs and convert them to markdown or org-mode.
+ - Use only z80 + linker in ~wla-dx~ installation.
 ** Prerequisites
 *** meka
  - Allegro5
