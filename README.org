@@ -1,0 +1,38 @@
+* sms-box
+** TODO List
+ - Learn how to use ~meka~.
+ - Put everything in a container (if possible).
+ - Research if SGDK SMS homebrew is a possibility.
+ - Make a z80 init file for SMS.
+ - Find some image converting tools.
+ - Read all .txt files in docs and convert them to markdown or org-mode.
+** Prerequisites
+*** meka
+ - Allegro5
+ - g++
+*** wla-dx
+ - cmake
+** Install commands
+#+BEGIN_SRC bash
+# clone repo with submodules
+git clone --recurse-submodules -j8 https://github.com/samgh96/sms-box
+# ---- build wla-dx ----
+cd wla-dx
+mkdir build && cd build
+cmake ..
+cmake --build . --config Release
+# optional: install wla-dx in /usr/bin
+# sudo cmake -P cmake_install.cmake
+# ---- build blastem ----
+# cd ../../blastem
+# make
+# ---- build meka ----
+cd meka/meka/srcs
+make
+# ---- optional: add z80-mode to your emacs config (if you use emacs) ----
+curl -o $HOME/.emacs.d/z80-mode.el https://raw.githubusercontent.com/SuperDisk/z80-mode/master/z80-mode.el
+
+if [[ -f $HOME/.emacs.d/init.el ]]; then
+  echo "(if (file-exists-p \"${HOME}/.emacs.d/z80-mode.el\") (load-file \"${HOME}/.emacs.d/z80-mode.el\"))" >> $HOME/.emacs.d/init.el
+fi
+#+END_SRC
