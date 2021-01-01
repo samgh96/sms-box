@@ -1,5 +1,5 @@
-* sms-box
-** TODO List
+* sms-box (WIP)
+** TODO Things to be done
  - Learn how to use ~meka~.
  - Put everything in a container (if possible).
  - Research if SGDK SMS homebrew is a possibility.
