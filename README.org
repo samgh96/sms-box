@@ -1,10 +1,25 @@
 * sms-box (WIP)
+** Introduction
+This repo contains a set of tools intended for Sega Master System
+homebrew development. The following tools are included:
+
+ - ~wla-dx~, a multi-platform assembler with its own linker and z80
+   support.
+ - ~meka~, a Sega Master System emulator.
+ - ~z80-mode~, a z80 assembly Emacs syntax highlighting mode.
+ - A hello world example with a simple Makefile.
+ - A handful of documentation regarding SMS and z80.
+
+** Installation
+First, clone the whole repo with its submodules using ~git clone
+--recurse-submodules -j8 https://github.com/samgh96/sms-box~.
+
+Then, execute the commands written in the "Install commands" section
+(this will be a custom script).
+
 ** TODO Things to be done
- - Learn how to use ~meka~.
  - Put everything in a container (if possible).
- - Research if SGDK SMS homebrew is a possibility.
  - Make a z80 init file for SMS.
- - Find some image converting tools.
  - Read all .txt files in docs and convert them to markdown or org-mode.
 ** Prerequisites
 *** meka
@@ -14,8 +29,6 @@
  - cmake
 ** Install commands
 #+BEGIN_SRC bash
-# clone repo with submodules
-git clone --recurse-submodules -j8 https://github.com/samgh96/sms-box
 # ---- build wla-dx ----
 cd wla-dx
 mkdir build && cd build
