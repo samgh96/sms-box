@@ -24,11 +24,10 @@ fi
 # ---- build meka ----
 echo "------------------------------------"
 echo "Building meka..."
-cd $ROOTDIR/meka/meka/srcs
-echo $PWD
+cd "$ROOTDIR"/meka/meka/srcs
 make
 
-cd $ROOTDIR
+cd "$ROOTDIR"
 
 # if [[ ! -f /usr/local/bin/meka  ]]; then
 #     echo "Linking meka bin to /usr/local/bin..."
@@ -51,8 +50,8 @@ fi
 
 echo "------------------------------------"
 cd ~/
-echo "Moving installation to /opt/sms-box..."
-sudo mv $ROOTDIR /opt/sms-box
+echo "Copying installation to /opt/sms-box..."
+sudo cp "$ROOTDIR" /opt/sms-box
 echo "------------------------------------"
 echo "Done! Now you should update your PATH variable:"
 echo "export PATH=/opt/sms-box/wla-dx/build/binaries:/opt/sms-box/meka/meka:\$PATH"
