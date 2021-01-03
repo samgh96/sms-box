@@ -4,3 +4,6 @@
 [submodule "meka"]
 	path = meka
 	url = https://github.com/ocornut/meka
+[submodule "devkitSMS"]
+	path = devkitSMS
+	url = https://github.com/sverx/devkitSMS
