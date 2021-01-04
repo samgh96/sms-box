@@ -30,7 +30,7 @@ After the installation your Sega Master System environment will be
 located in ~/opt/sms-box~. Add the following lines to your ~.rc~ file
 in order to make ~sms-box~ easy to use:
 #+BEGIN_SRC bash
-export PATH=/opt/sms-box/wla-dx/build/binaries:/opt/sms-box/meka/meka:$PATH
+export PATH=/opt/sms-box/bins:/opt/sms-box/meka/meka:$PATH
 alias mekarun=/opt/sms-box/meka/meka/meka
 #+END_SRC
 
